@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "token-efficient-rag-retriever"
+version = "1.0.0"
+description = "Retrieve only the context an answer needs: offline BM25 RAG with token-budgeted assembly, dedup and citation-preserving truncation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+ragretriever = "ragretriever.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
